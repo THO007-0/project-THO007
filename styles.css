@@ -1,3 +1,66 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: "Segoe UI", sans-serif;
+    overflow: hidden;
+}
+
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+h2 {
+    color: #ff4d6d;
+    margin-bottom: 20px;
+}
+
+button {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* ปุ่มรัก */
+button:first-of-type {
+    background: #ff4d6d;
+    color: white;
+}
+
+button:first-of-type:hover {
+    background: #ff1e4d;
+    transform: scale(1.1);
+}
+
+/* ปุ่มไม่รัก */
+#runaway {
+    background: #ccc;
+    color: black;
+    position: absolute;
+}
+
+#runaway:hover {
+    background: #999;
+}
+
+/* animation ลอยๆ */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
 body, html {
     margin: 0;
     padding: 0;
