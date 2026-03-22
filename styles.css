@@ -1,12 +1,16 @@
-
+/* RESET */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    font-family: "Segoe UI", sans-serif;
     overflow: hidden;
 }
 
+/* ===================== */
+/* 🎥 VIDEO BACKGROUND */
+/* ===================== */
 .video-container {
     position: fixed;
     top: 0;
@@ -20,10 +24,12 @@ body, html {
 .video-container video {
     width: 100vw;
     height: 100vh;
-    object-fit: cover; /* ปรับขนาดให้พอดีกับจอโดยไม่ให้มีขอบดำ */
+    object-fit: cover;
 }
 
-
+/* ===================== */
+/* 💖 หน้า content */
+/* ===================== */
 .content {
     position: relative;
     z-index: 1;
@@ -31,4 +37,64 @@ body, html {
     text-align: center;
     font-size: 2rem;
     margin-top: 20%;
+    text-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* ===================== */
+/* 💕 หน้าแรก (กล่องน่ารัก) */
+/* ===================== */
+.box {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+h2 {
+    color: #ff4d6d;
+}
+
+/* ปุ่ม */
+button {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* ปุ่มรัก */
+button:first-of-type {
+    background: #ff4d6d;
+    color: white;
+}
+
+button:first-of-type:hover {
+    background: #ff1e4d;
+    transform: scale(1.1);
+}
+
+/* ปุ่มไม่รัก (วิ่งหนี) */
+#runaway {
+    background: #ccc;
+    color: black;
+    position: absolute;
+}
+
+#runaway:hover {
+    background: #999;
+}
+
+/* animation ลอย */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
