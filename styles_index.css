@@ -8,6 +8,7 @@ body {
     overflow: hidden;
 }
 
+/* กล่อง */
 .box {
     background: white;
     padding: 40px;
@@ -15,13 +16,14 @@ body {
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     animation: float 3s ease-in-out infinite;
+    z-index: 2;
 }
 
 h2 {
     color: #ff4d6d;
-    margin-bottom: 20px;
 }
 
+/* ปุ่ม */
 button {
     display: block;
     margin: 15px auto;
@@ -44,20 +46,30 @@ button:first-of-type:hover {
     transform: scale(1.1);
 }
 
-/* ปุ่มไม่รัก */
+/* ปุ่มไม่รัก (หนี) */
 #runaway {
     background: #ccc;
-    color: black;
     position: absolute;
 }
 
-#runaway:hover {
-    background: #999;
-}
-
-/* animation ลอยๆ */
+/* ลอย */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
+}
+
+/* หัวใจลอย */
+.heart {
+    position: fixed;
+    bottom: 0;
+    font-size: 24px;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
 }
