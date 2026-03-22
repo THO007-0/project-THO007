@@ -2,21 +2,69 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="styles.css">
+    <title>หน้าแรก</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #111;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .box {
+            text-align: center;
+        }
+
+        input {
+            display: block;
+            margin: 15px auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #runaway {
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
-    <div class="video-container">
-        <video autoplay loop muted>
-            <source src="video.mp4" type="video/mp4">
-            เบราว์เซอร์ของคุณไม่รองรับแท็กวิดีโอ
-        </video>
-    </div>
-    <div class="content">
-        <h1> </h1>
-        <p>รักกกแฟนนน</p>
-    </div>
+
+<div class="box">
+    <h2>ลองเลือกดู 😏</h2>
+
+    <!-- ช่องที่ 1 -->
+    <input type="text" placeholder="กดอันนี้สิ">
+    <button onclick="goPage()">ไปหน้าถัดไป</button>
+
+    <!-- ช่องที่ 2 -->
+    <input type="text" placeholder="ลองกดดูดิ">
+    <button id="runaway">กดฉันสิ 😆</button>
+</div>
+
+<script>
+    function goPage() {
+        window.location.href = "page2.html";
+    }
+
+    const btn = document.getElementById("runaway");
+
+    btn.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+
+        btn.style.left = x + "px";
+        btn.style.top = y + "px";
+    });
+</script>
+
 </body>
 </html>
-
